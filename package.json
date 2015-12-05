@@ -1,0 +1,19 @@
+{
+  "name": "webpack-react-starter",
+  "version": "1.0.0",
+  "description": "a deadly simple starter of webpack with react",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "react"
+  ],
+  "author": "Cao Jiafeng",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  }
+}
