@@ -8,6 +8,6 @@ This is my attempt of setting up webpack/react with HMR.
 > npm run dev
 ```
 
-And then browse http://localhost:8080 to start developing with react.
+And then browse [http://localhost:8080](http://localhost:8080) to start developing with react.
 
 This config is strongly inspired by [survivejs](http://survivejs.com/).
