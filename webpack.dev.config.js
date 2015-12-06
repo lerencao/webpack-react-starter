@@ -14,31 +14,42 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/javascripts'
   },
-  
+
   devServer: {
     contentBase: PATHS.public,
     historyApiFallback: true,
     hot: true,
     inline: true,
     progress: true,
-    
+
     host: process.env.HOST,
     port: process.env.PORT
   },
-  
+
   module: {
     loaders: [
-     { 
-       test: /\.css$/,
-        loader: 'style-loader!css-loader' 
+      {
+        test: /\.js[x]?$/,
+        include: PATHS.app,
+        loader: 'babel-loader',
+        query: {
+          cacheDirectory: true
+        }
       },
-      { 
-        test: /\.(png|jpg|woff|woff2)$/, 
+      {
+        test: /\.css$/,
+        include: PATHS.app,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.(png|jpg|woff|woff2)$/,
+        include: PATHS.app,
         loader: 'url-loader?limit=8192'
       }, // inline base64 URLs for <=8k images, direct URLs for the rest
-      { 
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
-        loader: "file-loader" 
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        include: PATHS.app,
+        loader: "file-loader"
       }
     ]
   },
